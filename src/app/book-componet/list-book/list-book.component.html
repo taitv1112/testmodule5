@@ -1,0 +1,29 @@
+<p>Show List Book</p>
+
+<div class="container">
+  <h2>List Book</h2>
+  <input type="search" (ngModelChange)="searchTour(key.value)" #key="ngModel" ngModel
+         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>
+  <br>
+  <button [routerLink]="['/book/create-book']" > Create</button>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>id</th>
+      <th> Book name</th>
+      <th>Author</th>
+      <th colspan="2" style="text-align: center">Action</th>
+    </tr>
+    <tbody>
+    <tr *ngFor="let c of books; index as i">
+      <td >{{i+ 1}}</td>
+      <td [routerLink]="['/tour/detail-book', c.id]">{{c.title}}</td>
+      <td>{{c.author}}</td>
+      <td style="text-align: center"><button [routerLink]="['/book/edit-book',c.id]" > Edit</button></td>
+      <td style="text-align: center"> <button [routerLink]="['/book/delete-book', c.id]" > Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

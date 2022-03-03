@@ -1,0 +1,7 @@
+<p>delete-tour works!</p>
+
+<h4>Book  {{book.title}}</h4>
+<p>Author: {{book.author}}</p>
+<p>Description: {{book.description}}</p>
+<button (click)="delete()">Delete Book</button>
+<button [routerLink]="['/book/list-book']" > Back to home</button>
